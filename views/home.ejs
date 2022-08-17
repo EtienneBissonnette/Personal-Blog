@@ -1,7 +1,15 @@
-<%- include("partials/header") %> 
+<%- include("partials/header") %>
 
 <h1>Home</h1>
-
 <p><%= homeStart %> </p>
 
-<%- include("partials/footer") %>> 
+<% posts.forEach(post => { %>
+<h1><%= post.title %> </h1>
+<p>
+    <%= _.truncate(post.body,{length:100,omission:"... "}) %>
+    <a href="/post/<%=_.kebabCase(post.title)%>"> Read More </a>
+</p>
+<% }) %>
+
+
+<%- include("partials/footer") %>
