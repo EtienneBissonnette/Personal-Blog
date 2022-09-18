@@ -7,7 +7,7 @@
 <h1><%= post.title %> </h1>
 <p>
     <%= _.truncate(post.body,{length:100,omission:"... "}) %>
-    <a href="/post/<%=_.kebabCase(post.title)%>"> Read More </a>
+    <a href="/post/<%=_.kebabCase(post.title)%>" value = <%= post._id %>> Read More </a>
 </p>
 <% }) %>
 
